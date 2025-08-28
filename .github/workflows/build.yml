@@ -14,7 +14,8 @@ jobs:
       - name: installing dependencies backend
         run: |
           cd backend
-          pip install -r requirements.txt
+          pip install -r backend/requirements.txt
+          pip install pytest pytest-asyncio
       - name: backend test
         run: |
           PYTHONPATH=./backend pytest backend
