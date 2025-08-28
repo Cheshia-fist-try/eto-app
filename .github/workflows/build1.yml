@@ -1,0 +1,35 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3   # 1. Скачиваем код
+      - name: installing python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: installing dependencies backend
+        run: |
+          cd backend
+          pip install -r requirements.txt
+      - name: backend test
+        run: |
+          cd backend
+          pytest
+
+      - name: installing Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: installing dependencies frontend
+        run: |
+          cd frontend
+          npm ci
+      - name: bilding frontend
+        run: |
+          cd frontend
+          npm run build
+
