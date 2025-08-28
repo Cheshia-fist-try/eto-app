@@ -18,9 +18,8 @@ jobs:
           pip install pytest pytest-asyncio
       - name: backend test
         run: |
-          PYTHONPATH=./backend pytest backend
           cd backend
-          pytest
+          pytest backend
       - name: installing Node.js
         uses: actions/setup-node@v3
         with:
