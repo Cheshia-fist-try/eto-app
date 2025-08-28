@@ -30,7 +30,7 @@ nano .env
 
 ```
 cd backend
-python3 -m pip install -r requirements.py
+python3 -m pip install -r requirements.txt
 uvicorn app.main:app
 ```
 #### Load example data
