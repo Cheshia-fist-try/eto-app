@@ -17,6 +17,7 @@ jobs:
           pip install -r requirements.txt
       - name: backend test
         run: |
+          PYTHONPATH=.
           cd backend
           pytest
       - name: installing Node.js
