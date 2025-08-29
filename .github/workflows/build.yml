@@ -25,6 +25,7 @@ jobs:
   frontend:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3   # 1. Скачиваем код
       - name: installing Node.js
         uses: actions/setup-node@v3
         with:
